@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon-blue via-neon-teal to-neon-purple bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r from-neon-blue via-neon-teal to-neon-purple;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-teal text-white font-semibold rounded-xl 
+           hover:shadow-lg hover:shadow-neon-blue/25 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold rounded-xl
+           hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-neon-blue/20;
+  }
+
+  /* Premium Enhancements */
+  .premium-glow {
+    box-shadow: 
+      0 0 20px rgba(0, 212, 255, 0.3),
+      0 0 40px rgba(0, 212, 255, 0.2),
+      0 0 60px rgba(0, 212, 255, 0.1);
+  }
+
+  .premium-text-shadow {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .premium-border-glow {
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 
+      0 0 20px rgba(0, 212, 255, 0.2),
+      inset 0 0 20px rgba(0, 212, 255, 0.1);
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d4ff, #00ffd4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00b8e6, #00e6b8);
+}
