@@ -7,8 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "vercel-build": "vite build",
+    "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "clean": "rimraf dist node_modules/.vite",
+    "dev:clean": "npm run clean && npm run dev"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
