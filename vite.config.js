@@ -20,9 +20,9 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    headers: {
-      'Cross-Origin-Embedder-Policy': 'require-corp',
-      'Cross-Origin-Opener-Policy': 'same-origin'
+    strictPort: true,
+    hmr: {
+      port: 3001
     }
   },
   optimizeDeps: {
@@ -31,5 +31,9 @@ export default defineConfig({
   },
   define: {
     global: 'globalThis'
-  }
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`
+  },
+  assetsInclude: ['**/*.js', '**/*.css', '**/*.html']
 })

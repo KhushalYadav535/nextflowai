@@ -4,13 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build",
     "vercel-build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "clean": "rimraf dist node_modules/.vite",
-    "dev:clean": "npm run clean && npm run dev"
+    "dev:clean": "npm run clean && npm run dev",
+    "dev:force": "vite --force --host",
+    "dev:custom": "node dev-server.js",
+    "dev:simple": "vite --config vite.config.dev.js"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
