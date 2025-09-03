@@ -13,7 +13,8 @@
     "dev:clean": "npm run clean && npm run dev",
     "dev:force": "vite --force --host",
     "dev:custom": "node dev-server.js",
-    "dev:simple": "vite --config vite.config.dev.js"
+    "dev:simple": "vite --config vite.config.dev.js",
+    "build:simple": "vite build --config vite.config.simple.js"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",

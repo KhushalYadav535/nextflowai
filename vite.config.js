@@ -4,16 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: './',
   build: {
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          animations: ['framer-motion'],
-          icons: ['lucide-react']
-        }
+        manualChunks: undefined,
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js'
       }
     }
   },
@@ -34,6 +34,5 @@ export default defineConfig({
   },
   esbuild: {
     jsxInject: `import React from 'react'`
-  },
-  assetsInclude: ['**/*.js', '**/*.css', '**/*.html']
+  }
 })
