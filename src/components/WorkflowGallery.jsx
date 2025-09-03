@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Play, Download, Eye, Zap, Clock, Users, Star, ArrowRight, X } from 'lucide-react'
+import { Play, Download, Eye, Zap, Clock, Users, Star, ArrowRight, X, Workflow, Bot, BarChart3, Shield } from 'lucide-react'
 
 const WorkflowGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -130,6 +130,86 @@ const WorkflowGallery = () => {
             Deploy pre-built, battle-tested workflows in minutes. Each workflow is designed by experts 
             and optimized for performance and reliability.
           </p>
+        </motion.div>
+
+        {/* Tech Workflow Illustration */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="max-w-6xl mx-auto">
+            <div className="relative h-64 md:h-80 rounded-3xl overflow-hidden backdrop-blur-md border border-white/20">
+              {/* Tech Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/10 via-neon-teal/10 to-neon-purple/10"></div>
+              
+              {/* Central Workflow Hub */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-r from-neon-blue via-neon-teal to-neon-purple rounded-full flex items-center justify-center animate-pulse-glow">
+                    <Workflow className="w-12 h-12 md:w-16 md:h-16 text-white" />
+                  </div>
+                  
+                  {/* Workflow Connection Lines */}
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    <svg className="w-full h-full" viewBox="0 0 200 200">
+                      <defs>
+                        <linearGradient id="workflowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#00d4ff" />
+                          <stop offset="50%" stopColor="#00ffd4" />
+                          <stop offset="100%" stopColor="#8b5cf6" />
+                        </linearGradient>
+                      </defs>
+                      {/* Workflow paths */}
+                      <path
+                        d="M100 0 Q150 50 100 100 Q50 150 100 200"
+                        stroke="url(#workflowGradient)"
+                        strokeWidth="3"
+                        fill="none"
+                        opacity="0.5"
+                      />
+                      <path
+                        d="M0 100 Q50 50 100 100 Q150 150 200 100"
+                        stroke="url(#workflowGradient)"
+                        strokeWidth="3"
+                        fill="none"
+                        opacity="0.4"
+                      />
+                      <path
+                        d="M50 0 Q100 50 150 100 Q100 150 50 200"
+                        stroke="url(#workflowGradient)"
+                        strokeWidth="2"
+                        fill="none"
+                        opacity="0.3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating Workflow Nodes */}
+              <div className="absolute top-8 left-8 w-12 h-12 bg-gradient-to-r from-neon-blue to-neon-teal rounded-2xl opacity-80 animate-float flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute top-8 right-8 w-12 h-12 bg-gradient-to-r from-neon-teal to-neon-purple rounded-2xl opacity-80 animate-float flex items-center justify-center" style={{ animationDelay: '1s' }}>
+                <Bot className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute bottom-8 left-8 w-12 h-12 bg-gradient-to-r from-neon-purple to-neon-blue rounded-2xl opacity-80 animate-float flex items-center justify-center" style={{ animationDelay: '2s' }}>
+                <BarChart3 className="w-6 h-6 text-white" />
+              </div>
+              <div className="absolute bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-neon-blue to-neon-teal rounded-2xl opacity-80 animate-float flex items-center justify-center" style={{ animationDelay: '3s' }}>
+                <Shield className="w-6 h-6 text-white" />
+              </div>
+              
+              {/* Data Flow Particles */}
+              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-neon-blue/60 rounded-full animate-pulse"></div>
+              <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-neon-teal/60 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-neon-purple/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-neon-blue/60 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Category Filter */}
